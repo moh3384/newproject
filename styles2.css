@@ -427,104 +427,113 @@ nav .nav-items {
 
 
 /* ===========================
-        MOBILE IMPROVEMENTS
+        MOBILE FIX
 =========================== */
 
-@media (max-width: 768px) {
+@media (max-width: 992px){
 
-    /* NAVBAR */
-    nav {
-        flex-direction: column;
-        height: auto;
-        padding: 1rem;
-        gap: 1rem;
-        text-align: center;
-    }
+  nav{
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+    gap: 1rem;
+  }
 
-    nav .nav-items {
-        flex-direction: column;
-        gap: 0.8rem;
-    }
+  /* إلغاء البحث العائم */
+  .search{
+    float: none;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
 
-    nav .logo {
-        justify-content: center;
-    }
+  input[type=search]{
+    width: 100%;
+    max-width: 250px;
+  }
 
-    /* HERO */
-    .hero-section {
-        flex-direction: column;
-        text-align: center;
-        padding: 1.5rem;
-    }
+  input[type=search]:focus,
+  input[type=search]:not(:placeholder-shown){
+    width: 100%;
+    max-width: 300px;
+  }
 
-    .hero-section h1 {
-        font-size: 1.6rem;
-    }
+  nav .nav-items{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
 
-    .hero-section p {
-        font-size: 1rem;
-    }
-
-    .hero1 img {
-        width: 100%;
-        max-width: 280px;
-        height: auto;
-    }
-
-    /* FEATURES */
-    .qualities {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .quality {
-        width: 100%;
-        max-width: 320px;
-    }
-
-    /* PRODUCTS */
-    .products {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
-
-    .product img {
-        width: 100%;
-        height: 150px;
-    }
-
-    .product h3 {
-        font-size: 1rem;
-    }
-
-    /* Buttons */
-    .btn {
-        width: 100%;
-    }
-
-    .products-section button {
-        width: 100%;
-    }
 }
 
 
-/* Extra small devices */
-@media (max-width: 480px) {
+/* 📱 موبايل */
+@media (max-width: 768px){
 
-    .products {
-        grid-template-columns: 1fr;
-    }
+  nav{
+    text-align: center;
+  }
 
-    nav {
-        padding: 0.8rem;
-    }
+  nav .logo{
+    justify-content: center;
+  }
 
-    .hero-section h1 {
-        font-size: 1.3rem;
-    }
+  /* المنتجات */
+  .products-section .products{
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+    justify-items: center;
+  }
 
-    .hero-section h4 {
-        font-size: 1.2rem;
-    }
+  .product{
+    width: 100%;
+    max-width: 200px;
+    padding: 15px;
+  }
+
+  .product img{
+    width: 100%;
+  }
+
+  .product_name{
+    float: none;
+    text-align: center;
+  }
+
+  .product_price{
+    margin-top: 1rem;
+  }
+
+}
+
+
+/* 📱 أجهزة صغيرة جداً */
+@media (max-width: 480px){
+
+  .products-section .products{
+    grid-template-columns: 1fr;
+  }
+
+  .product{
+    max-width: 260px;
+  }
+
+  nav{
+    padding: 0.8rem;
+  }
+
+  nav .nav-items{
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cart-cont{
+    top: -5px;
+    right: -5px;
+  }
+
+  input[type=search]{
+    max-width: 200px;
+  }
 
 }
